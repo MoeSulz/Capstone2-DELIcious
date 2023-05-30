@@ -49,6 +49,11 @@ public abstract class Sandwich {
     }
 
     public abstract double getPrice();
+    public abstract double meatPrice();
+    public abstract double cheesePrice();
+    public abstract double extraMeatPrice();
+    public abstract double extraCheesePrice();
+    public abstract double basePrice();
 
     @Override
     public String toString() {
