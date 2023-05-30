@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UserInterface {
+
+
+
     static Scanner scan = new Scanner(System.in);
     static ArrayList<Sandwich4> sandwich4s = new ArrayList<>();
     static ArrayList<Sandwich8> sandwich8s = new ArrayList<>();
@@ -89,8 +92,13 @@ public class UserInterface {
         } else if (choice.equals("12inch")) {
             System.out.println("Price: +$1.50");
         }
-        boolean isExtraMeat = scan.nextBoolean();
-        scan.nextLine();
+        String yesNo = scan.nextLine();
+        boolean isExtraMeat = true;
+        if (yesNo.equalsIgnoreCase("yes")) {
+            isExtraMeat = true;
+        } else if (yesNo.equalsIgnoreCase("no")) {
+            isExtraMeat = false;
+        }
         System.out.println("What cheese would you like?");
         System.out.println("American, provolone, cheddar, swiss");
         if (choice.equals("4inch")){
@@ -109,12 +117,17 @@ public class UserInterface {
         } else if (choice.equals("12inch")) {
             System.out.println("Price: +$0.90");
         }
-        boolean isExtraCheese = scan.nextBoolean();
+        String noYes = scan.nextLine();
+        boolean isExtraCheese = true;
+        if (noYes.equalsIgnoreCase("yes")) {
+            isExtraCheese = true;
+        } else if (noYes.equalsIgnoreCase("no")) {
+            isExtraMeat = false;
+        }
 
         System.out.println("=========Regular Toppings=========");
         System.out.println("What regular toppings would you like?");
         System.out.println("Lettuce, peppers, onions, tomatoes, jalapenos, cucumbers, pickles, guacamole, and mushrooms");
-        scan.nextLine();
         String regularToppings = scan.nextLine();
 
         System.out.println("What sauce would you like?");
@@ -123,6 +136,7 @@ public class UserInterface {
         if (choice.equals("4inch")) {
             Sandwich4 sandwich4 = new Sandwich4(bread, meat, cheese, regularToppings, sauce, isExtraMeat, isExtraCheese);
             System.out.println(sandwich4);
+            System.out.println(sandwich4.getPrice());
             sandwich4s.add(sandwich4);
         } else if (choice.equals("8inch")) {
             Sandwich8 sandwich8 = new Sandwich8(bread, meat, cheese, regularToppings, sauce, isExtraMeat, isExtraCheese);
