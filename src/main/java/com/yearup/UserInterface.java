@@ -1,10 +1,13 @@
 package com.yearup;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UserInterface {
     static Scanner scan = new Scanner(System.in);
-
+    static ArrayList<Sandwich4> sandwich4s = new ArrayList<>();
+    static ArrayList<Sandwich8> sandwich8s = new ArrayList<>();
+    static ArrayList<Sandwich12> sandwich12s = new ArrayList<>();
     public void loadEntrance() {
         boolean quit = false;
         while (!quit) {
@@ -120,12 +123,15 @@ public class UserInterface {
         if (choice.equals("4inch")) {
             Sandwich4 sandwich4 = new Sandwich4(bread, meat, cheese, regularToppings, sauce, isExtraMeat, isExtraCheese);
             System.out.println(sandwich4);
+            sandwich4s.add(sandwich4);
         } else if (choice.equals("8inch")) {
             Sandwich8 sandwich8 = new Sandwich8(bread, meat, cheese, regularToppings, sauce, isExtraMeat, isExtraCheese);
             System.out.println(sandwich8);
+            sandwich8s.add(sandwich8);
         } else if (choice.equals("12inch")) {
             Sandwich12 sandwich12 = new Sandwich12(bread, meat, cheese, regularToppings, sauce, isExtraMeat, isExtraCheese);
             System.out.println(sandwich12);
+            sandwich12s.add(sandwich12);
         }
     }
     public void addDrink(){
