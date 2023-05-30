@@ -49,4 +49,18 @@ public abstract class Sandwich {
     }
 
     public abstract double getPrice();
+
+    @Override
+    public String toString() {
+        return "Sandwich{" +
+                "bread='" + bread + '\'' +
+                ", meat='" + meat + '\'' +
+                ", cheese='" + cheese + '\'' +
+                ", regularTopping='" + regularTopping + '\'' +
+                ", sauce='" + sauce + '\'' +
+                ", isExtraMeat=" + isExtraMeat +
+                ", isExtraCheese=" + isExtraCheese +
+                ", price=" + price +
+                '}';
+    }
 }
