@@ -188,7 +188,86 @@ public class UserInterface {
         chips.add(chipsType);
         System.out.println("Chips added !!!");
     }
-    public void checkout(){
-        System.out.println();
+    public double calculateDrinkPrice(String drink) {
+        OtherProducts otherProducts = new OtherProducts();
+        double price = 0.00;
+
+        switch (drink.toLowerCase()) {
+            case "small":
+                price = otherProducts.getSmallDrink();
+                break;
+            case "medium":
+                price = otherProducts.getMediumDrink();
+                break;
+            case "large":
+                price = otherProducts.getLargeDrink();
+                break;
+            default:
+                System.out.println("Invalid drink size: " + drink);
+                break;
+        }
+        return price;
     }
+
+    public double calculateChipsPrice(String chipsType) {
+        OtherProducts otherProducts = new OtherProducts();
+        double price = 0.00;
+
+        switch (chipsType.toLowerCase()) {
+            case "yes":
+                price = otherProducts.getChips();
+                break;
+            default:
+                System.out.println("Invalid chips type: " + chipsType);
+                break;
+        }
+        return price;
+    }
+
+    public void checkout(){
+        double totalCost = 0.00;
+        System.out.println("======= Order Summary =======");
+        System.out.println("Sandwiches:");
+        for (Sandwich4 sandwich4 : sandwich4s) {
+            System.out.println(sandwich4);
+            totalCost += sandwich4.getPrice();
+        }
+        for (Sandwich8 sandwich8 : sandwich8s) {
+            System.out.println(sandwich8);
+            totalCost += sandwich8.getPrice();
+        }
+        for (Sandwich12 sandwich12 : sandwich12s) {
+            System.out.println(sandwich12);
+            totalCost += sandwich12.getPrice();
+        }
+
+        System.out.println("Drinks:");
+        for (String drink : drinks) {
+            System.out.println(drink);
+            totalCost += calculateDrinkPrice(drink);
+        }
+
+        System.out.println("Chips:");
+        for (String chip : chips) {
+            System.out.println(chip);
+            totalCost += calculateChipsPrice(chip);
+        }
+
+        System.out.println("=============================");
+        System.out.println("Total Cost: $" + totalCost);
+        System.out.println("Thank you for your order!");
+
+
+        sandwich4s.clear();
+        sandwich8s.clear();
+        sandwich12s.clear();
+        drinks.clear();
+        chips.clear();
+
+
+    }
+
+
+
+
 }
