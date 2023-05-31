@@ -11,6 +11,9 @@ public class UserInterface {
     static ArrayList<Sandwich4> sandwich4s = new ArrayList<>();
     static ArrayList<Sandwich8> sandwich8s = new ArrayList<>();
     static ArrayList<Sandwich12> sandwich12s = new ArrayList<>();
+
+    static ArrayList<String> drinks = new ArrayList<>();
+    static ArrayList<String> chips = new ArrayList<>();
     public void loadEntrance() {
         boolean quit = false;
         while (!quit) {
@@ -135,9 +138,9 @@ public class UserInterface {
         if (choice.equals("4inch")) {
             Sandwich4 sandwich4 = new Sandwich4(bread, meat, cheese, regularToppings, sauce, isExtraMeat, isExtraCheese);
             System.out.println(sandwich4);
-            System.out.println(sandwich4.getPrice());
             sandwich4s.add(sandwich4);
             System.out.println(sandwich4.getPrice());
+
         } else if (choice.equals("8inch")) {
             Sandwich8 sandwich8 = new Sandwich8(bread, meat, cheese, regularToppings, sauce, isExtraMeat, isExtraCheese);
             System.out.println(sandwich8);
@@ -154,14 +157,36 @@ public class UserInterface {
         if (chipsDrink.equalsIgnoreCase("yes")){
             loadOrder();
         } else if (chipsDrink.equalsIgnoreCase("no")) {
-            checkout();
+            loadOrder();
+
         }
     }
-    public void addDrink(){
+    public void addDrink() {
+        System.out.println("Enter the size drink you would like to add:");
+        System.out.println("Small $2.00, Medium $2.50, Large $3.00");
+        String drink = scan.nextLine();
+        OtherProducts otherProducts = new OtherProducts();
+        if (drink.equalsIgnoreCase("small")){
+            otherProducts.getSmallDrink();
+        } else if (drink.equalsIgnoreCase("medium")) {
+            otherProducts.getMediumDrink();
+        } else if (drink.equalsIgnoreCase("large")) {
+            otherProducts.getLargeDrink();
+
+        }
+        drinks.add(drink);
+        System.out.println(otherProducts);
+        System.out.println("Drink added !!!");
 
     }
-    public void addChips(){
-        System.out.println();
+
+    public void addChips() {
+        OtherProducts otherProducts = new OtherProducts();
+        System.out.println("Enter the chips you would like to add:");
+        String chipsType = scan.nextLine();
+        otherProducts.getChips();
+        chips.add(chipsType);
+        System.out.println("Chips added !!!");
     }
     public void checkout(){
         System.out.println();
