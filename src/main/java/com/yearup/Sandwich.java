@@ -49,7 +49,11 @@ public abstract class Sandwich {
     }
 
     public abstract double getPrice();
-    public abstract double meatPrice();
+
+    public double meatPrice() {
+        return 0;
+    }
+
     public abstract double cheesePrice();
     public abstract double extraMeatPrice();
     public abstract double extraCheesePrice();
@@ -64,6 +68,8 @@ public abstract class Sandwich {
                 ", regularTopping='" + regularTopping + '\'' +
                 ", sauce='" + sauce + '\'' +
                 ", isExtraMeat=" + isExtraMeat +
-                ", isExtraCheese=" + isExtraCheese + "}";
+                ", isExtraCheese=" + isExtraCheese +
+                '}';
     }
 }
+

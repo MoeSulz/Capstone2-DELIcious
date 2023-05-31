@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UserInterface {
+
+
+
     static Scanner scan = new Scanner(System.in);
     static ArrayList<Sandwich4> sandwich4s = new ArrayList<>();
     static ArrayList<Sandwich8> sandwich8s = new ArrayList<>();
@@ -132,6 +135,7 @@ public class UserInterface {
         if (choice.equals("4inch")) {
             Sandwich4 sandwich4 = new Sandwich4(bread, meat, cheese, regularToppings, sauce, isExtraMeat, isExtraCheese);
             System.out.println(sandwich4);
+            System.out.println(sandwich4.getPrice());
             sandwich4s.add(sandwich4);
             System.out.println(sandwich4.getPrice());
         } else if (choice.equals("8inch")) {
