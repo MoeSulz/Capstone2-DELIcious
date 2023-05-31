@@ -64,8 +64,6 @@ public abstract class Sandwich {
                 ", regularTopping='" + regularTopping + '\'' +
                 ", sauce='" + sauce + '\'' +
                 ", isExtraMeat=" + isExtraMeat +
-                ", isExtraCheese=" + isExtraCheese +
-                ", price=" + price +
-                '}';
+                ", isExtraCheese=" + isExtraCheese + "}";
     }
 }
