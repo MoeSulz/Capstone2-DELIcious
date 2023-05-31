@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1b15166-a596-40aa-8221-d0ebc00627c5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yearup/Receipts.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yearup/receiptmanager.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yearup/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yearup/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="f1b15166-a596-40aa-8221-d0ebc00627c5" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,7 +33,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/Users/courtneyjohnson/Desktop/LearnToCode_Capstones/Capstone2-DELIcious"
+    "last_opened_file_path": "/Users/ralpheden/Desktop/LearnToCode_Workshop/Cap/Capstone2-DELIcious"
   }
 }]]></component>
   <component name="RunManager">
