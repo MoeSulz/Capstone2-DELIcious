@@ -122,9 +122,8 @@ public class UserInterface {
         if (noYes.equalsIgnoreCase("yes")) {
             isExtraCheese = true;
         } else if (noYes.equalsIgnoreCase("no")) {
-            isExtraMeat = false;
+            isExtraCheese = false;
         }
-
         System.out.println("=========Regular Toppings=========");
         System.out.println("What regular toppings would you like?");
         System.out.println("Lettuce, peppers, onions, tomatoes, jalapenos, cucumbers, pickles, guacamole, and mushrooms");
@@ -138,18 +137,28 @@ public class UserInterface {
             System.out.println(sandwich4);
             System.out.println(sandwich4.getPrice());
             sandwich4s.add(sandwich4);
+            System.out.println(sandwich4.getPrice());
         } else if (choice.equals("8inch")) {
             Sandwich8 sandwich8 = new Sandwich8(bread, meat, cheese, regularToppings, sauce, isExtraMeat, isExtraCheese);
             System.out.println(sandwich8);
             sandwich8s.add(sandwich8);
+            System.out.println(sandwich8.getPrice());
         } else if (choice.equals("12inch")) {
             Sandwich12 sandwich12 = new Sandwich12(bread, meat, cheese, regularToppings, sauce, isExtraMeat, isExtraCheese);
             System.out.println(sandwich12);
             sandwich12s.add(sandwich12);
+            System.out.println(sandwich12.getPrice());
+        }
+        System.out.println("Would you like any drinks or chips?");
+        String chipsDrink = scan.nextLine();
+        if (chipsDrink.equalsIgnoreCase("yes")){
+            loadOrder();
+        } else if (chipsDrink.equalsIgnoreCase("no")) {
+            checkout();
         }
     }
     public void addDrink(){
-        System.out.println();
+
     }
     public void addChips(){
         System.out.println();
