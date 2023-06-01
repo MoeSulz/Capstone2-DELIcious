@@ -165,42 +165,49 @@ public class UserInterface {
         System.out.println("Enter the size drink you would like to add:");
         System.out.println("Small $2.00, Medium $2.50, Large $3.00");
         String drink = scan.nextLine();
-        OtherProducts otherProducts = new OtherProducts();
+        SmallDrink smallDrink = new SmallDrink();
+        MediumDrink mediumDrink = new MediumDrink();
+        LargeDrink largeDrink = new LargeDrink();
         if (drink.equalsIgnoreCase("small")){
-            otherProducts.getSmallDrink();
+            smallDrink.getSmallDrink();
+            System.out.println(smallDrink);
         } else if (drink.equalsIgnoreCase("medium")) {
-            otherProducts.getMediumDrink();
+            mediumDrink.getMediumDrink();
+            System.out.println(mediumDrink);
         } else if (drink.equalsIgnoreCase("large")) {
-            otherProducts.getLargeDrink();
+            largeDrink.getLargeDrink();
+            System.out.println(largeDrink);
 
         }
         drinks.add(drink);
-        System.out.println(otherProducts);
+
         System.out.println("Drink added !!!");
 
     }
 
     public void addChips() {
-        OtherProducts otherProducts = new OtherProducts();
-        System.out.println("Enter the chips you would like to add:");
+        Chips chips1 = new Chips();
+        System.out.println("Would you like chips on your order?");
         String chipsType = scan.nextLine();
-        otherProducts.getChips();
+        chips1.getChips();
         chips.add(chipsType);
         System.out.println("Chips added !!!");
     }
     public double calculateDrinkPrice(String drink) {
-        OtherProducts otherProducts = new OtherProducts();
+        SmallDrink smallDrink = new SmallDrink();
+        MediumDrink mediumDrink = new MediumDrink();
+        LargeDrink largeDrink = new LargeDrink();
         double price = 0.00;
 
         switch (drink.toLowerCase()) {
             case "small":
-                price = otherProducts.getSmallDrink();
+                price = smallDrink.getSmallDrink();
                 break;
             case "medium":
-                price = otherProducts.getMediumDrink();
+                price = mediumDrink.getMediumDrink();
                 break;
             case "large":
-                price = otherProducts.getLargeDrink();
+                price = largeDrink.getLargeDrink();
                 break;
             default:
                 System.out.println("Invalid drink size: " + drink);
@@ -210,12 +217,12 @@ public class UserInterface {
     }
 
     public double calculateChipsPrice(String chipsType) {
-        OtherProducts otherProducts = new OtherProducts();
+        Chips chips1 = new Chips();
         double price = 0.00;
 
         switch (chipsType.toLowerCase()) {
             case "yes":
-                price = otherProducts.getChips();
+                price = chips1.getChips();
                 break;
             default:
                 System.out.println("Invalid chips type: " + chipsType);
@@ -256,7 +263,7 @@ public class UserInterface {
         System.out.println("=============================");
         System.out.println("Total Cost: $" + totalCost);
         System.out.println("Thank you for your order!");
-
+        ReceiptPrint.saveReceipt(sandwich4s, sandwich8s, sandwich12s, drinks, chips);
 
         sandwich4s.clear();
         sandwich8s.clear();
