@@ -18,7 +18,7 @@ public class UserInterface {
         boolean quit = false;
         while (!quit) {
             System.out.println("Welcome to the Deli");
-            System.out.println("===================");
+            System.out.println("=============================");
             System.out.println("What would you like to do today?");
             System.out.println("1. New Order");
             System.out.println("2. Exit");
@@ -71,6 +71,21 @@ public class UserInterface {
         System.out.println("8inch Price: $7.00");
         System.out.println("12inch Price: $8.50");
         String choice = scan.nextLine();
+        switch (choice){
+            case "4inch":
+                System.out.println("4inch selected");
+                break;
+            case "8inch":
+                System.out.println("8inch selected");
+                break;
+            case "12inch":
+                System.out.println("12inch selected");
+                break;
+            default:
+                System.out.println("please try again");
+               addSandwich();
+
+        }
 
         System.out.println("What bread would you like?");
         System.out.println("White, Wheat, Rye, or Wrap");
@@ -263,7 +278,9 @@ public class UserInterface {
         System.out.println("=============================");
         System.out.println("Total Cost: $" + totalCost);
         System.out.println("Thank you for your order!");
+        System.out.println("=============================");
         ReceiptPrint.saveReceipt(sandwich4s, sandwich8s, sandwich12s, drinks, chips);
+
 
         sandwich4s.clear();
         sandwich8s.clear();
