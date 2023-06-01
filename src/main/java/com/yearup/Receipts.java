@@ -21,7 +21,7 @@ public class Receipts {
         loadTransactions(FILE_NAME);
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
-}
+    }
 
     public static void loadTransactions(String fileName) {
         LocalDate date = LocalDate.now();
@@ -43,4 +43,6 @@ public class Receipts {
         } catch (IOException e) {
             System.out.println("Error loading receipt: " + e.getMessage());
         }
-    }}
+
+    }
+}
