@@ -240,7 +240,7 @@ public class UserInterface {
         double price = 0.00;
 
         switch (chipsType.toLowerCase()) {
-            case "yes":
+            case "doritos", "lays potato chips", "cheetos", "ruffles":
                 price = chips1.getChips();
                 break;
             default:
@@ -285,13 +285,11 @@ public class UserInterface {
         System.out.println("=============================");
         ReceiptPrint.saveReceipt(sandwich4s, sandwich8s, sandwich12s, drinks, chips);
 
-
         sandwich4s.clear();
         sandwich8s.clear();
         sandwich12s.clear();
         drinks.clear();
         chips.clear();
-
 
     }
 

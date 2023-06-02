@@ -10,6 +10,8 @@ import java.util.ArrayList;
 
 
 public class ReceiptPrint {
+    static UserInterface userInterface = new UserInterface();
+    static double totalCost = 0;
     public static void saveReceipt(ArrayList<Sandwich4> sandwich4s, ArrayList<Sandwich8> sandwich8s, ArrayList<Sandwich12> sandwich12s, ArrayList<String> drinks, ArrayList<String> chips) {
         int totalCount = 10; // Assuming a value of 10 for demonstration purposes
 
@@ -20,28 +22,25 @@ public class ReceiptPrint {
         String fileName = formattedDate;
         String fileType = "txt";
 
-        for (int counter = 2; counter < totalCount; counter++) {
+        //for (int counter = 2; counter < totalCount; counter++) {
             int size = 250;
             // TBD
             File myFile;
             try {
                 BufferedWriter writer = new BufferedWriter(new FileWriter(fileName + "." + fileType));
-                myFile = new File(filePath + fileName + counter + "." + fileType);
+                myFile = new File(filePath + fileName + "." + fileType);
                 for (int i = 0; i < sandwich4s.size(); i++){
                     if (!(sandwich4s.get(i).getBread().equals(null))){
                         writer.write(String.valueOf(sandwich4s));
-                        writer.write((int) sandwich4s.get(i).getPrice());
                     }
                 } for (int i = 0; i < sandwich8s.size(); i++) {
                     if (!(sandwich8s.get(i).getBread().equals(null))) {
                         writer.write(String.valueOf(sandwich8s));
-                        writer.write((int) sandwich8s.get(i).getPrice());
                     }
                 }
                 for (int i = 0; i < sandwich12s.size(); i++) {
                     if (!(sandwich12s.get(i).getBread().equals(null))) {
                         writer.write(String.valueOf(sandwich12s));
-                        writer.write((int) sandwich12s.get(i).getPrice());
                     }
                 }
                 for (int i = 0; i < drinks.size(); i++){
@@ -64,4 +63,4 @@ public class ReceiptPrint {
             // Do something with the file...
         }
 }
-}
+
