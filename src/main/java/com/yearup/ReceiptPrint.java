@@ -16,7 +16,7 @@ public class ReceiptPrint {
         LocalDateTime myDateObj = LocalDateTime.now();
         DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("yyyyMMdd-hhmmss");
         String formattedDate = myDateObj.format(myFormatObj);
-        String filePath = "~/Desktop/LearnToCode_Capstones/Capstone2-DELIcious/receiptmanager";
+        String filePath = "~/Desktop/LearnToCode_Capstones/Capstone2-DELIcious/receiptmanager/";
         String fileName = formattedDate;
         String fileType = "txt";
 
@@ -30,25 +30,30 @@ public class ReceiptPrint {
                 for (int i = 0; i < sandwich4s.size(); i++){
                     if (!(sandwich4s.get(i).getBread().equals(null))){
                         writer.write(String.valueOf(sandwich4s));
+                        writer.write((int) sandwich4s.get(i).getPrice());
                     }
                 } for (int i = 0; i < sandwich8s.size(); i++) {
                     if (!(sandwich8s.get(i).getBread().equals(null))) {
                         writer.write(String.valueOf(sandwich8s));
+                        writer.write((int) sandwich8s.get(i).getPrice());
                     }
                 }
                 for (int i = 0; i < sandwich12s.size(); i++) {
                     if (!(sandwich12s.get(i).getBread().equals(null))) {
                         writer.write(String.valueOf(sandwich12s));
+                        writer.write((int) sandwich12s.get(i).getPrice());
                     }
                 }
                 for (int i = 0; i < drinks.size(); i++){
                     if (!(drinks.get(i).isEmpty())){
-                        writer.write(String.valueOf(drinks));
+                        writer.newLine();
+                        writer.write("Drink: " + drinks);
                     }
                 }
                 for (int i = 0; i < chips.size(); i++) {
                     if (!(chips.get(i).isEmpty())) {
-                        writer.write(String.valueOf(chips));
+                        writer.newLine();
+                        writer.write("Chips: " + chips);
                     }
                 }
                 writer.close();

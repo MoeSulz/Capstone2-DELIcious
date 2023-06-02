@@ -61,15 +61,14 @@ public abstract class Sandwich {
 
     @Override
     public String toString() {
-        return "Sandwich{" +
-                "bread='" + bread + '\'' +
-                ", meat='" + meat + '\'' +
-                ", cheese='" + cheese + '\'' +
-                ", regularTopping='" + regularTopping + '\'' +
-                ", sauce='" + sauce + '\'' +
-                ", isExtraMeat=" + isExtraMeat +
-                ", isExtraCheese=" + isExtraCheese +
-                '}';
+        return "Sandwich" + '\n' +
+                "bread: " + bread + '\n' +
+                "Meat: " + meat + '\n' +
+                "Cheese: " + cheese + '\n' +
+                "Regular Toppings: " + regularTopping + '\n' +
+                "Sauce: " + sauce + '\n' +
+                "Extra Meat: " + isExtraMeat + '\n' +
+                "Extra Cheese: " + isExtraCheese;
     }
 }
 
