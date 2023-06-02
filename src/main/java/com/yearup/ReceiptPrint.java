@@ -22,18 +22,19 @@ public class ReceiptPrint {
         String fileName = formattedDate;
         String fileType = "txt";
 
-        //for (int counter = 2; counter < totalCount; counter++) {
+        for (int counter = 2; counter < totalCount; counter++) {
             int size = 250;
             // TBD
             File myFile;
             try {
                 BufferedWriter writer = new BufferedWriter(new FileWriter(fileName + "." + fileType));
-                myFile = new File(filePath + fileName + "." + fileType);
-                for (int i = 0; i < sandwich4s.size(); i++){
-                    if (!(sandwich4s.get(i).getBread().equals(null))){
+                myFile = new File(filePath + fileName + counter + "." + fileType);
+                for (int i = 0; i < sandwich4s.size(); i++) {
+                    if (!(sandwich4s.get(i).getBread().equals(null))) {
                         writer.write(String.valueOf(sandwich4s));
                     }
-                } for (int i = 0; i < sandwich8s.size(); i++) {
+                }
+                for (int i = 0; i < sandwich8s.size(); i++) {
                     if (!(sandwich8s.get(i).getBread().equals(null))) {
                         writer.write(String.valueOf(sandwich8s));
                     }
@@ -43,8 +44,8 @@ public class ReceiptPrint {
                         writer.write(String.valueOf(sandwich12s));
                     }
                 }
-                for (int i = 0; i < drinks.size(); i++){
-                    if (!(drinks.get(i).isEmpty())){
+                for (int i = 0; i < drinks.size(); i++) {
+                    if (!(drinks.get(i).isEmpty())) {
                         writer.newLine();
                         writer.write("Drink: " + drinks);
                     }
@@ -62,5 +63,6 @@ public class ReceiptPrint {
 
             // Do something with the file...
         }
+    }
 }
 
