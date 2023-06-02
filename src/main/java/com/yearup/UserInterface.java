@@ -202,7 +202,11 @@ public class UserInterface {
 
     public void addChips() {
         Chips chips1 = new Chips();
-        System.out.println("Would you like chips on your order?");
+        System.out.println("Enter what chips you would like:");
+        System.out.println("Doritos");
+        System.out.println("Lays Potato Chips");
+        System.out.println("Cheetos");
+        System.out.println("Ruffles");
         String chipsType = scan.nextLine();
         chips1.getChips();
         chips.add(chipsType);
